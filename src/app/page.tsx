@@ -14,7 +14,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div>
       <LoadingScreen logoSrc="/vercel.svg" duration={1000} />
 
       <div
