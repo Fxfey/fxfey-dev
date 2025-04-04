@@ -3,7 +3,7 @@ import LoadingScreen from '@/app/components/LoadingScreen';
 import Navbar from '@/app/components/Navbar';
 import { useState, useEffect } from 'react';
 
-export default function LandingPage() {
+export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
   const loadTime = 0;
   const fadeInTime = loadTime + 750;
