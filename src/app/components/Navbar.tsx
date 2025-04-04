@@ -19,13 +19,13 @@ export default function Navbar({ activePage }: NavbarProps) {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Projects', path: '/projects' },
+    { name: 'My Work', path: '/work' },
     { name: 'Blog', path: '/blog' },
     { name: 'About', path: '/about' },
   ];
 
   return (
-    <nav className="hidden pt-14 md:flex md:text-2xl md:gap-12 lg:text-3xl font-bold">
+    <nav className="hidden pt-14 md:flex md:text-2xl md:gap-12 lg:text-3xl font-bold mb-12">
       {navItems.map((item) => {
         const isHovered = hovered === item.name;
 

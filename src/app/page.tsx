@@ -27,7 +27,20 @@ export default function LandingPage() {
           }`}
         >
           <Navbar activePage="" />
-          {/* Page Content Starts */}
+          <h1>{`Hi, I'm Ben 'Fxfey'`}</h1>
+          <h2 className="mb-12">Full Stack Developer</h2>
+          <p className="w-[55%] mb-12 text-lg">{`Crafting digital experiences from the UK, I'm a full stack developer with a passion for turning complex problems into elegant solutions.`}</p>
+          <div>
+            <button className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold mr-6">
+              My Work
+            </button>
+            <button className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold mr-6">
+              Blog
+            </button>
+            <button className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold">
+              About
+            </button>
+          </div>
         </div>
       </div>
     </div>
