@@ -16,6 +16,12 @@ export default function LandingPage() {
     return () => clearTimeout(timer);
   }, []);
 
+  const landingButtons = [
+    { name: 'My Work', path: '/work' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'About', path: '/about' },
+  ];
+
   return (
     <div>
       {/* <LoadingScreen logoSrc="/vercel.svg" duration={1000} /> */}
@@ -30,16 +36,18 @@ export default function LandingPage() {
           <h1>{`Hi, I'm Ben 'Fxfey'`}</h1>
           <h2 className="mb-12">Full Stack Developer</h2>
           <p className="w-[55%] mb-12 text-lg">{`Crafting digital experiences from the UK, I'm a full stack developer with a passion for turning complex problems into elegant solutions.`}</p>
-          <div>
-            <button className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold mr-6">
-              My Work
-            </button>
-            <button className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold mr-6">
-              Blog
-            </button>
-            <button className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold">
-              About
-            </button>
+          <div className="flex gap-8">
+            {landingButtons.map((item) => {
+              return (
+                <a
+                  key={item.name}
+                  href={item.path}
+                  className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold"
+                >
+                  {item.name}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
