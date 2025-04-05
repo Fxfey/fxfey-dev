@@ -1,6 +1,6 @@
 import { useState, useEffect, ReactNode } from 'react';
-import LoadingScreen from '@/app/components/core/LoadingScreen';
-import Navbar from '@/app/components/core/Navbar';
+import LoadingScreen from '@/app/_components/core/LoadingScreen';
+import Navbar from '@/app/_components/core/Navbar';
 
 interface PageLayoutProps {
   children: ReactNode;

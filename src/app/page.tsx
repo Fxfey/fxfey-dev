@@ -1,7 +1,7 @@
 'use client';
-import LoadingScreen from '@/app/components/core/LoadingScreen';
-import Navbar from '@/app/components/core/Navbar';
-import BtnPrimary from './components/buttons/primary';
+import LoadingScreen from '@/app/_components/core/LoadingScreen';
+import Navbar from '@/app/_components/core/Navbar';
+import BtnPrimary from './_components/buttons/primary';
 import { useState, useEffect } from 'react';
 
 export default function LandingPage() {
