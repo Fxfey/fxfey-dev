@@ -1,6 +1,7 @@
 'use client';
-import LoadingScreen from '@/app/components/LoadingScreen';
-import Navbar from '@/app/components/Navbar';
+import LoadingScreen from '@/app/components/core/LoadingScreen';
+import Navbar from '@/app/components/core/Navbar';
+import BtnPrimary from './components/buttons/primary';
 import { useState, useEffect } from 'react';
 
 export default function LandingPage() {
@@ -39,13 +40,11 @@ export default function LandingPage() {
           <div className="flex gap-8">
             {landingButtons.map((item) => {
               return (
-                <a
+                <BtnPrimary
                   key={item.name}
-                  href={item.path}
-                  className="text-xl bg-text-base text-primary px-3 py-2 rounded-sm font-bold"
-                >
-                  {item.name}
-                </a>
+                  title={item.name}
+                  path={item.path}
+                />
               );
             })}
           </div>

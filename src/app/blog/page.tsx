@@ -1,10 +1,10 @@
 'use client';
 import PageSkeleton from '@/app/components/core/PageSkeleton'; // Adjust path as needed
 
-export default function Work() {
+export default function Blog() {
   return (
-    <PageSkeleton activePage="work">
-      <h1>My Work</h1>
+    <PageSkeleton activePage="blog">
+      <h1>Blog Content</h1>
     </PageSkeleton>
   );
 }
