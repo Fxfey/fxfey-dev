@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 
 // Define the endpoint URLs
-const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+const SPOTIFY_WEB_API = `https://api.spotify.com/v1/me/player`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 // Fetch environment variables
@@ -38,7 +38,28 @@ async function getSpotifyToken(
 }
 
 async function getCurrentSong(access_token: string) {
-  const response = await fetch(NOW_PLAYING_ENDPOINT, {
+  const response = await fetch(SPOTIFY_WEB_API + '/currently-playing', {
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + access_token,
+    },
+  });
+
+  if (response.status === 204) {
+    return null;
+  } else {
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(`Failed to get token`);
+    }
+
+    return data;
+  }
+}
+
+async function getRecentSongs(access_token: string) {
+  const response = await fetch(SPOTIFY_WEB_API + '/recently-played', {
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + access_token,
@@ -64,14 +85,60 @@ export async function GET() {
 
     const currentSong = await getCurrentSong(spotifyToken);
 
-    const songResponse = {
-      song_name: currentSong.item.name,
-      artists: currentSong.item.artists,
-      album_name: currentSong.item.album.name,
-      cover_image: currentSong.item.album.images,
+    if (currentSong) {
+      const songResponse = {
+        song_name: currentSong.item.name,
+        artists: currentSong.item.artists,
+        album_name: currentSong.item.album.name,
+        cover_image: currentSong.item.album.images,
+      };
+      return NextResponse.json(songResponse);
+    }
+
+    type Artist = {
+      name: string;
     };
-    console.log(songResponse);
-    return NextResponse.json(songResponse);
+
+    type Image = {
+      url: string;
+      height?: number;
+      width?: number;
+    };
+
+    type Album = {
+      images: Image[];
+    };
+
+    type Track = {
+      name: string;
+      artists: Artist[];
+      album: Album;
+    };
+
+    interface SpotifyItem {
+      track: Track;
+    }
+
+    interface RecentSong {
+      song_name: string;
+      artists: Artist[];
+      cover_image: Image[];
+    }
+
+    const recentlyPlayed = await getRecentSongs(spotifyToken);
+
+    const recentSongs: Record<number, RecentSong> = {};
+
+    recentlyPlayed.items.slice(0, 3).map((item: SpotifyItem, index: number) => {
+      const data = item.track;
+
+      recentSongs[index] = {
+        song_name: data.name,
+        artists: data.artists,
+        cover_image: data.album.images,
+      };
+    });
+    console.log(recentSongs);
   } catch (error) {
     console.error(error);
   }

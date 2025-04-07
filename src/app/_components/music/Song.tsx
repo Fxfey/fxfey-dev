@@ -18,6 +18,19 @@ type SongData = {
   cover_image: Image[];
 };
 
+// type Track = {
+
+// }
+
+// type RecentSongs = {
+//   tracks: Track[];
+//   played_at: string;
+// }
+
+type SpotifyResponse =
+  | { isPlaying: true; data: SongData }
+  | { isPlaying: false; data: RecentSongs };
+
 export default function SpotifyComponent() {
   const [songData, setSongData] = useState<SongData | null>(null);
 
@@ -25,8 +38,12 @@ export default function SpotifyComponent() {
     const fetchSpotifyData = async () => {
       const res = await fetch('/api/music');
       const data = await res.json();
-      setSongData(data);
       console.log(data);
+      if (data.song_name && data.album_name) {
+        setSongData(data);
+      } else {
+        console.log('ffff');
+      }
     };
 
     fetchSpotifyData();
