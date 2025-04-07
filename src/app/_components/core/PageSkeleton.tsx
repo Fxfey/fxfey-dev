@@ -27,7 +27,7 @@ export default function PageSkeleton({
   return (
     <div>
       <LoadingScreen delay={loadTime} logoSrc="" />
-      <div className="h-fit px-4 sm:px-18 md:px-32 lg:px-44 xl:px-64">
+      <div className="h-fit px-4 sm:px-18 md:px-32 lg:px-44 xl:px-52">
         <div
           className={`transition-opacity duration-700 ${
             isLoading ? 'opacity-0' : 'opacity-100'

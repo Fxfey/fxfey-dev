@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHeadset,
@@ -10,19 +10,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import PageSkeleton from '@/app/_components/core/PageSkeleton';
 import CardSecondary from '../_components/cards/secondary';
+import SpotifyComponent from '../_components/music/Song';
 
 export default function About() {
   const [showHobby, setShowHobby] = useState('Hiking');
-
-  useEffect(() => {
-    const fetchHello = async () => {
-      const res = await fetch('/api/music');
-      const data = await res.json();
-      console.log(data); // Logs: 'Hello from App Router!'
-    };
-
-    fetchHello();
-  }, []);
 
   const careerSteps = [
     {
@@ -121,8 +112,8 @@ export default function About() {
           </p>
         </div>
       </CardSecondary>
-      <div className="flex flex-wrap w-full gap-2.5 mt-2.5 xl:flex-nowrap">
-        <section className="w-[100%] xl:w-full h-full flex flex-col gap-2.5">
+      <div className="flex flex-wrap w-full h-[55vh] mb-20 gap-2.5 mt-2.5 xl:flex-nowrap">
+        <section className="w-[100%] xl:w-full flex flex-col gap-2.5">
           <CardSecondary>
             <h3>Career</h3>
             {careerSteps.map((item, index) => {
@@ -151,7 +142,7 @@ export default function About() {
           </CardSecondary>
         </section>
         <section className="min-w-[50%] h-full flex flex-col gap-2.5">
-          <div className="max-h-1/2">
+          <div>
             <CardSecondary>
               <h3>Outside of development</h3>
               <div className="flex gap-2.5">
@@ -164,7 +155,6 @@ export default function About() {
                         showHobby === item.title ? 'bg-secondary' : 'bg-primary'
                       }`}
                       onClick={(e) => {
-                        // Optionally prevent navigation
                         e.preventDefault();
                         setShowHobby(item.title);
                       }}
@@ -193,9 +183,10 @@ export default function About() {
               </section>
             </CardSecondary>
           </div>
-          <div>
+          <div className="h-full">
             <CardSecondary>
               <h3>Music</h3>
+              <SpotifyComponent />
             </CardSecondary>
           </div>
         </section>

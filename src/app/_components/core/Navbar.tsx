@@ -59,7 +59,7 @@ export default function Navbar({ activePage }: NavbarProps) {
               <div
                 className={`${
                   transition ? 'translate-y-0' : 'translate-y-full'
-                }  absolute w-screen h-screen top-0 left-0 transition duration-500 bg-loading-screen`}
+                }  absolute w-screen h-screen z-10 top-0 left-0 transition duration-500 bg-loading-screen`}
               ></div>
             )}
           </div>
