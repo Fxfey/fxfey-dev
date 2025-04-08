@@ -10,6 +10,36 @@ const client_id = process.env.SPOTIFY_CLIENT ?? '';
 const client_secret = process.env.SPOTIFY_SECRET ?? '';
 const refresh_token = process.env.SPOTIFY_REFRESH ?? '';
 
+type Artist = {
+  name: string;
+};
+
+type Image = {
+  url: string;
+  height?: number;
+  width?: number;
+};
+
+type Album = {
+  images: Image[];
+};
+
+type Track = {
+  name: string;
+  artists: Artist[];
+  album: Album;
+};
+
+interface SpotifyItem {
+  track: Track;
+}
+
+interface RecentSong {
+  song_name: string;
+  artists: Artist[];
+  cover_image: Image[];
+}
+
 async function getSpotifyToken(
   refresh_token: string,
   client_id: string,
@@ -95,39 +125,9 @@ export async function GET() {
       return NextResponse.json(songResponse);
     }
 
-    type Artist = {
-      name: string;
-    };
-
-    type Image = {
-      url: string;
-      height?: number;
-      width?: number;
-    };
-
-    type Album = {
-      images: Image[];
-    };
-
-    type Track = {
-      name: string;
-      artists: Artist[];
-      album: Album;
-    };
-
-    interface SpotifyItem {
-      track: Track;
-    }
-
-    interface RecentSong {
-      song_name: string;
-      artists: Artist[];
-      cover_image: Image[];
-    }
-
     const recentlyPlayed = await getRecentSongs(spotifyToken);
 
-    const recentSongs: Record<number, RecentSong> = {};
+    const recentSongs: Record<number, RecentSong> = [];
 
     recentlyPlayed.items.slice(0, 3).map((item: SpotifyItem, index: number) => {
       const data = item.track;
@@ -138,7 +138,8 @@ export async function GET() {
         cover_image: data.album.images,
       };
     });
-    console.log(recentSongs);
+
+    return NextResponse.json(recentSongs);
   } catch (error) {
     console.error(error);
   }

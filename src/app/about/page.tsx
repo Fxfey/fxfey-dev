@@ -112,7 +112,7 @@ export default function About() {
           </p>
         </div>
       </CardSecondary>
-      <div className="flex flex-wrap w-full h-[55vh] mb-20 gap-2.5 mt-2.5 xl:flex-nowrap">
+      <div className="flex flex-wrap w-full mb-20 gap-2.5 mt-2.5 xl:flex-nowrap">
         <section className="w-[100%] xl:w-full flex flex-col gap-2.5">
           <CardSecondary>
             <h3>Career</h3>
@@ -185,7 +185,6 @@ export default function About() {
           </div>
           <div className="h-full">
             <CardSecondary>
-              <h3>Music</h3>
               <SpotifyComponent />
             </CardSecondary>
           </div>
