@@ -52,7 +52,7 @@ export default function SpotifyComponent() {
       <>
         <div className="flex items-center">
           <h3>Music</h3>
-          <div className="relative ml-auto h-3 w-3 bg-green-600/80 rounded-sm group">
+          <div className="relative animate-bounce ml-auto h-3 w-3 bg-green-600/80 rounded-sm group">
             <span className="absolute bg-text-base text-sm text-center p-1 rounded-sm w-36 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
               Im listening to this right now!
             </span>
@@ -89,7 +89,7 @@ export default function SpotifyComponent() {
       <div>
         <div className="flex items-center">
           <h3>Music</h3>
-          <div className="relative ml-auto h-3 w-3 bg-red-400/80 rounded-sm z-20 group">
+          <div className="relative animate-bounce ml-auto h-3 w-3 bg-red-400/80 rounded-sm z-20 group">
             <span className="absolute bg-text-base text-sm text-center p-1 rounded-sm w-36 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
               I'm not currently listening to any music.
             </span>
@@ -133,6 +133,7 @@ export default function SpotifyComponent() {
   if (songData) {
     spotifyOutput = renderNowPlaying(songData);
   } else if (recentSongs) {
+    // TODO - add hover to these
     spotifyOutput = renderRecentSongs(recentSongs);
   } else {
     spotifyOutput = <p>Loading...</p>;

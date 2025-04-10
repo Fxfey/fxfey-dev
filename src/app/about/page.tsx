@@ -190,8 +190,10 @@ export default function About() {
           </div>
         </section>
         <section className="w-full h-full flex flex-col gap-2.5">
-          <div className="h-[80%]">
-            <CardSecondary>6</CardSecondary>
+          <div className="h-full">
+            <CardSecondary>
+              <h3>Favorite Games</h3>
+            </CardSecondary>
           </div>
           <div className="h-[20%]">
             <CardSecondary>7</CardSecondary>
