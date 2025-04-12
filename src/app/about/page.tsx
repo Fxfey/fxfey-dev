@@ -11,6 +11,7 @@ import {
 import PageSkeleton from '@/app/_components/core/PageSkeleton';
 import CardSecondary from '../_components/cards/secondary';
 import SpotifyComponent from '../_components/music/Song';
+import GameComponent from '../_components/steam/Game';
 
 export default function About() {
   const [showHobby, setShowHobby] = useState('Hiking');
@@ -193,6 +194,7 @@ export default function About() {
           <div className="h-full">
             <CardSecondary>
               <h3>Favorite Games</h3>
+              <GameComponent></GameComponent>
             </CardSecondary>
           </div>
           <div className="h-[20%]">
