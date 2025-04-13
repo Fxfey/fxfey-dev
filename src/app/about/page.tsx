@@ -50,7 +50,7 @@ export default function About() {
           hike so far is{' '}
           <Link
             href={'https://www.newzealand.com/uk/feature/roys-peak-track/'}
-            className="cursor-pointer bg-primary font-bold text-text-base px-1.5 rounded-sm hover:bg-secondary transition-all duration-200"
+            className="cursor-pointer bg-primary font-bold text-text-base px-1.5 rounded-sm hover:bg-secondary transition-all duration-200 whitespace-nowrap"
             target="_blank"
           >
             Roy{"'"}s Peak
@@ -74,7 +74,7 @@ export default function About() {
           current setup is with an{' '}
           <Link
             href={'https://www.aeropress.co.uk/'}
-            className="cursor-pointer bg-[#A71818] font-bold text-text-base px-1.5 rounded-sm hover:bg-[#6c1818] transition-all duration-200"
+            className="cursor-pointer bg-[#A71818] font-bold text-text-base px-1.5 rounded-sm hover:bg-[#6c1818] transition-all duration-200 whitespace-nowrap"
             target="_blank"
           >
             AeroPress
@@ -82,11 +82,12 @@ export default function About() {
           and beans from{' '}
           <Link
             href={'https://ravecoffee.co.uk/'}
-            className="cursor-pointer bg-[#FFD100] font-bold text-black px-1.5 rounded-sm hover:bg-[#c3a22b] transition-all duration-200"
+            className="cursor-pointer bg-[#FFD100] font-bold text-black px-1.5 rounded-sm hover:bg-[#c3a22b] transition-all duration-200 whitespace-nowrap"
             target="_blank"
           >
             Rave Coffee
-          </Link>{' '}
+          </Link>
+          .
         </>
       ),
     },
