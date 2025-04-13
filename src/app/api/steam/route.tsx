@@ -9,24 +9,67 @@ const STEAM_WEB_API =
 const steam_key = process.env.STEAM_API_KEY ?? '';
 const steam_id = process.env.STEAM_ID ?? '';
 
-const response = await fetch(
-  STEAM_WEB_API + `/?appid=730&key=${steam_key}&steamid=${steam_id}`,
-  {
-    method: 'GET',
-  },
-);
+const favoriteGames = [
+  '730', // CS2
+  '427520', // Factorio
+  '1245620', // Elden Ring
+];
 
-const data = await response.json();
+async function getGameStats(gameId: string) {
+  const getStats = await fetch(
+    STEAM_WEB_API + `/?appid=${gameId}&key=${steam_key}&steamid=${steam_id}`,
+    {
+      method: 'GET',
+    },
+  );
 
-// if (!response.ok) {
-//   throw new Error(`Failed to get token`);
-// }
+  const gameStats = await getStats.json();
+  return {
+    game_stats: gameStats.playerstats.stats,
+  };
+}
+
+async function getGameDetails(gameId: string) {
+  const getDetails = await fetch(
+    `https://store.steampowered.com/api/appdetails?l=english&appids=${gameId}`,
+    {
+      method: 'GET',
+    },
+  );
+
+  const gameDetails = await getDetails.json();
+  return {
+    game_name: gameDetails[gameId].data.name,
+    game_banner: gameDetails[gameId].data.header_image,
+  };
+}
+
+const gameData: object[] = [];
+
+async function constructGameData() {
+  // Use Promise.all to wait for all async operations to complete
+  const promises = favoriteGames.map(async (gameId) => {
+    const gameDetails = await getGameDetails(gameId);
+    const gameStats = await getGameStats(gameId);
+
+    // Handle stats
+    if (gameId === '730') {
+      console.log('ggg');
+    }
+
+    return { ...gameDetails, ...gameStats };
+  });
+
+  const results = await Promise.all(promises);
+  gameData.push(...results);
+  // console.log(gameData);
+}
 
 export async function GET() {
   try {
-    console.log('ff');
-    console.log(data);
-    return NextResponse.json({ data });
+    constructGameData();
+    // return NextResponse.json({ data });
+    return NextResponse.json(gameData);
   } catch (error) {
     console.error(error);
   }

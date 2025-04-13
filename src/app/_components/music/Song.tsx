@@ -39,7 +39,6 @@ export default function SpotifyComponent() {
       if (data.song_name && data.album_name) {
         setSongData(data);
       } else {
-        console.log(data);
         setRecentSongs(data);
       }
     };
