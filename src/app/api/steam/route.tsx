@@ -44,9 +44,9 @@ async function getGameDetails(gameId: string) {
   };
 }
 
-const gameData: object[] = [];
-
 async function constructGameData() {
+  const gameData: object[] = [];
+
   // Use Promise.all to wait for all async operations to complete
   const promises = favoriteGames.map(async (gameId) => {
     const gameDetails = await getGameDetails(gameId);
@@ -62,12 +62,12 @@ async function constructGameData() {
 
   const results = await Promise.all(promises);
   gameData.push(...results);
-  // console.log(gameData);
+  return gameData;
 }
 
 export async function GET() {
   try {
-    constructGameData();
+    const gameData = await constructGameData();
     // return NextResponse.json({ data });
     return NextResponse.json(gameData);
   } catch (error) {
