@@ -44,6 +44,73 @@ async function getGameDetails(gameId: string) {
   };
 }
 
+function handleCsStats(gameStats: object) {
+  const stats = gameStats as Array<{ name: string; value: number }>;
+
+  const findStat = (statName: string): number => {
+    const stat = stats.find((item) => item.name === statName);
+    return stat ? stat.value : 0;
+  };
+
+  const formattedStats = {
+    game_stats: {
+      total_kills: {
+        icon: '<i class="fa-solid fa-skull-crossbones"></i>',
+        label: 'Total Kills',
+        value: findStat('total_kills'),
+      },
+      total_wins: {
+        icon: '<i class="fa-solid fa-crown"></i>',
+        label: 'Total Wins',
+        value: findStat('total_wins'),
+      },
+      total_time_played: {
+        icon: '<i class="fa-solid fa-clock"></i>',
+        label: 'Total Time Played',
+        value: findStat('total_time_played'),
+      },
+      total_money_earned: {
+        icon: '<i class="fa-solid fa-dollar-sign"></i>',
+        label: 'Total Money Earned',
+        value: findStat('total_money_earned'),
+      },
+    },
+  };
+
+  return formattedStats;
+}
+
+function handleFactorioStats(gameStats: object) {
+  const stats = gameStats as Array<{ name: string; value: number }>;
+
+  const findStat = (statName: string): number => {
+    const stat = stats.find((item) => item.name === statName);
+    return stat ? stat.value : 0;
+  };
+
+  const formattedStats = {
+    game_stats: {
+      electronic_circuits_production_overall: {
+        icon: '<i class="fa-solid fa-bolt"></i>',
+        label: 'Total Circuits Made',
+        value: findStat('electronic-circuits-production-overall'),
+      },
+      iron_plates_per_hour: {
+        icon: '<i class="fa-solid fa-weight-hanging"></i>',
+        label: 'Most Iron Plates /h',
+        value: findStat('iron-plates-per-hour'),
+      },
+      longest_train_path: {
+        icon: '<i class="fa-solid fa-train"></i>',
+        label: 'Longest Train Path',
+        value: findStat('longest-train-path'),
+      },
+    },
+  };
+
+  return formattedStats;
+}
+
 async function constructGameData() {
   const gameData: object[] = [];
 
@@ -52,12 +119,16 @@ async function constructGameData() {
     const gameDetails = await getGameDetails(gameId);
     const gameStats = await getGameStats(gameId);
 
+    const constructedGameStats: object[] = [];
+
     // Handle stats
     if (gameId === '730') {
-      console.log('ggg');
+      constructedGameStats.push(handleCsStats(gameStats.game_stats));
+    } else if (gameId === '427520') {
+      constructedGameStats.push(handleFactorioStats(gameStats.game_stats));
     }
 
-    return { ...gameDetails, ...gameStats };
+    return { game_id: gameId, ...gameDetails, ...constructedGameStats[0] };
   });
 
   const results = await Promise.all(promises);
@@ -68,7 +139,6 @@ async function constructGameData() {
 export async function GET() {
   try {
     const gameData = await constructGameData();
-    // return NextResponse.json({ data });
     return NextResponse.json(gameData);
   } catch (error) {
     console.error(error);

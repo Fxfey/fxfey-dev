@@ -8,6 +8,10 @@ import {
   faPersonHiking,
   faUserNinja,
 } from '@fortawesome/free-solid-svg-icons';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import PageSkeleton from '@/app/_components/core/PageSkeleton';
 import CardSecondary from '../_components/cards/secondary';
 import SpotifyComponent from '../_components/music/Song';
@@ -115,7 +119,7 @@ export default function About() {
         </div>
       </CardSecondary>
       <div className="flex flex-wrap w-full mb-20 gap-2.5 mt-2.5 xl:flex-nowrap">
-        <section className="w-[100%] xl:w-full flex flex-col gap-2.5">
+        <section className="w-full xl:w-1/5 max-w-full flex flex-col gap-2.5">
           <CardSecondary>
             <h3>Career</h3>
             {careerSteps.map((item, index) => {
@@ -143,7 +147,7 @@ export default function About() {
             })}
           </CardSecondary>
         </section>
-        <section className="min-w-[50%] h-full flex flex-col gap-2.5">
+        <section className="w-full xl:w-3/5 max-w-full flex flex-col gap-2.5">
           <div>
             <CardSecondary>
               <h3>Outside of development</h3>
@@ -191,11 +195,34 @@ export default function About() {
             </CardSecondary>
           </div>
         </section>
-        <section className="w-full h-full flex flex-col gap-2.5">
+        <section className="w-full xl:w-1/5 max-w-full flex flex-col gap-2.5">
           <div className="h-full">
             <CardSecondary>
               <h3>Favorite Games</h3>
-              <GameComponent></GameComponent>
+              <div className="w-full h-full">
+                <Swiper
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  modules={[Autoplay, Pagination]}
+                >
+                  <SwiperSlide>
+                    <GameComponent gameID="730" /> {/* CS2 */}
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <GameComponent gameID="427520" /> {/* Factorio */}
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <GameComponent gameID="1245620" /> {/* Elden Ring */}
+                  </SwiperSlide>
+                </Swiper>
+              </div>
             </CardSecondary>
           </div>
           <div className="h-[20%]">
