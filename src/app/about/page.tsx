@@ -226,7 +226,25 @@ export default function About() {
             </CardSecondary>
           </div>
           <div className="h-[20%]">
-            <CardSecondary>7</CardSecondary>
+            <CardSecondary>
+              <Link
+                key={'contact'}
+                href={'/contact'}
+                // onMouseEnter={() => setHovered(item.name)}
+                // onMouseLeave={() => setHovered('')}
+                className="flex bg-primary text-text-base w-full h-full items-center justify-center p-1 text-xl rounded-sm"
+                onClick={(e) => {
+                  // Optionally prevent navigation
+                  e.preventDefault();
+                  handleClick();
+                  setTimeout(() => {
+                    window.location.pathname = '/' + item.path;
+                  }, 500);
+                }}
+              >
+                Get in touch!
+              </Link>
+            </CardSecondary>
           </div>
         </section>
       </div>

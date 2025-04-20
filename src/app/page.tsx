@@ -15,12 +15,13 @@ export default function LandingPage() {
     }, fadeInTime);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [fadeInTime]);
 
   const landingButtons = [
     { name: 'My Work', path: '/work' },
     { name: 'Blog', path: '/blog' },
     { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (

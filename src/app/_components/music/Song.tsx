@@ -90,13 +90,13 @@ export default function SpotifyComponent() {
           <h3>Music</h3>
           <div className="relative animate-bounce ml-auto h-3 w-3 bg-red-400/80 rounded-sm z-20 group">
             <span className="absolute bg-text-base text-sm text-center p-1 rounded-sm w-36 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-              I'm not currently listening to any music.
+              I{"'"}m not currently listening to any music.
             </span>
           </div>
         </div>
         <p className="mb-2">Recently played:</p>
         <div className="flex justify-evenly gap-4">
-          {recentSongs.map((song) => (
+          {recentSongs.map((song: RecentSong) => (
             <div
               key={song.song_name}
               className="relative w-fit flex overflow-hidden rounded-sm 2xl:flex-1"
@@ -115,9 +115,13 @@ export default function SpotifyComponent() {
                   height={100}
                   className="m-2 2xl:mx-auto 2xl:mt-2 rounded-md"
                 ></Image>
-                <div className="hidden 2xl:block m-2 flex flex-col justify-center">
+                <div className="2xl:block m-2 flex flex-col justify-center">
                   <p className="font-bold stroke-1">{song.song_name}</p>
-                  <p>{song.artists.map((artist) => artist.name).join(', ')}</p>
+                  <p>
+                    {song.artists
+                      .map((artist: Artist) => artist.name)
+                      .join(', ')}
+                  </p>
                 </div>
               </div>
             </div>

@@ -28,6 +28,7 @@ export default function Navbar({ activePage }: NavbarProps) {
     { name: 'My Work', path: '/work' },
     { name: 'Blog', path: '/blog' },
     { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
