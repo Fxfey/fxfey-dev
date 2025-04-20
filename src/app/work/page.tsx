@@ -8,7 +8,7 @@ export default function Work() {
     <PageSkeleton activePage="work">
       <CardPrimary>
         <h1>Coming Soon</h1>
-        <p className="mb-4">Want to know why?</p>
+        <h3 className="mb-4">Want to know why?</h3>
         <BtnPrimary title={'Find out here'} path={'coming-soon'} />
       </CardPrimary>
     </PageSkeleton>
