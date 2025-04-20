@@ -119,7 +119,7 @@ export default function About() {
         </div>
       </CardSecondary>
       <div className="flex flex-wrap w-full mb-20 gap-2.5 mt-2.5 xl:flex-nowrap">
-        <section className="w-full xl:w-1/5 max-w-full flex flex-col gap-2.5">
+        <section className="w-full xl:w-[25%] max-w-full flex flex-col gap-2.5">
           <CardSecondary>
             <h3>Career</h3>
             {careerSteps.map((item, index) => {
@@ -147,7 +147,7 @@ export default function About() {
             })}
           </CardSecondary>
         </section>
-        <section className="w-full xl:w-3/5 max-w-full flex flex-col gap-2.5">
+        <section className="w-full xl:w-[50%] max-w-full flex flex-col gap-2.5">
           <div>
             <CardSecondary>
               <h3>Outside of development</h3>
@@ -195,7 +195,7 @@ export default function About() {
             </CardSecondary>
           </div>
         </section>
-        <section className="w-full xl:w-1/5 max-w-full flex flex-col gap-2.5">
+        <section className="w-full xl:w-[25%] max-w-full flex flex-col gap-2.5">
           <div className="h-full">
             <CardSecondary>
               <h3>Favorite Games</h3>
