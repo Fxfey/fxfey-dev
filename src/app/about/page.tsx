@@ -204,7 +204,7 @@ export default function About() {
                   spaceBetween={0}
                   slidesPerView={1}
                   autoplay={{
-                    delay: 3500,
+                    delay: 5000,
                     disableOnInteraction: false,
                   }}
                   pagination={{

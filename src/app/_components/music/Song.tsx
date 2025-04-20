@@ -99,7 +99,7 @@ export default function SpotifyComponent() {
           {recentSongs.map((song: RecentSong) => (
             <div
               key={song.song_name}
-              className="relative w-fit flex overflow-hidden rounded-sm 2xl:flex-1"
+              className="relative w-1/3 flex overflow-hidden rounded-sm 2xl:flex-1"
             >
               <div
                 className="absolute inset-0 bg-center bg-cover rounded-sm blur-sm scale-115 opacity-50"
@@ -107,7 +107,7 @@ export default function SpotifyComponent() {
                   backgroundImage: `url('${song.cover_image[0].url}')`,
                 }}
               ></div>
-              <div className="z-10 flex flex-col w-full">
+              <div className="z-10 flex flex-col items-center w-full">
                 <Image
                   alt="Spotify cover art"
                   src={song.cover_image[0].url}
@@ -115,7 +115,7 @@ export default function SpotifyComponent() {
                   height={100}
                   className="m-2 2xl:mx-auto 2xl:mt-2 rounded-md"
                 ></Image>
-                <div className="2xl:block m-2 flex flex-col justify-center">
+                <div className="2xl:block m-2 flex flex-col text-center justify-center">
                   <p className="font-bold stroke-1">{song.song_name}</p>
                   <p>
                     {song.artists

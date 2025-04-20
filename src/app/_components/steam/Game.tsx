@@ -98,7 +98,7 @@ export default function GameComponent({ gameID }: Readonly<GameComponentID>) {
           width={1000}
           height={1000}
           alt="game banner"
-          className="w-full rounded-sm"
+          className="w-full m-auto rounded-sm md:w-2/3 xl:w-full"
         />
         {renderGameStats(requestedGame?.game_stats)}
       </div>
