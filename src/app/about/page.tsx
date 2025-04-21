@@ -157,7 +157,7 @@ export default function About() {
                     <Link
                       key={item.title}
                       href=""
-                      className={`w-10 h-10 bg-primary rounded-sm text-text-base/85 cursor-pointer my-2.5 hover:bg-secondary transition-all duration-200 flex justify-center items-center ${
+                      className={`w-10 h-10 bg-primary rounded-sm text-base cursor-pointer my-2.5 hover:bg-secondary transition-all duration-200 flex justify-center items-center ${
                         showHobby === item.title ? 'bg-secondary' : 'bg-primary'
                       }`}
                       onClick={(e) => {
