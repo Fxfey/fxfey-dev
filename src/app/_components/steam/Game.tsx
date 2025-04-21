@@ -87,7 +87,6 @@ export default function GameComponent({ gameID }: Readonly<GameComponentID>) {
   if (!gameData) return <div>Failed to load games.</div>;
 
   const requestedGame = gameData.find((item) => item.game_id === gameID);
-  console.log(requestedGame);
 
   if (requestedGame) {
     return (

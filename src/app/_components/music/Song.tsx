@@ -18,9 +18,7 @@ type SongData = {
   cover_image: Image[];
 };
 
-type RecentSongs = {
-  data: RecentSong[];
-};
+type RecentSongs = RecentSong[];
 
 type RecentSong = {
   artists: Artist[];
@@ -136,7 +134,6 @@ export default function SpotifyComponent() {
   if (songData) {
     spotifyOutput = renderNowPlaying(songData);
   } else if (recentSongs) {
-    // TODO - add hover to these
     spotifyOutput = renderRecentSongs(recentSongs);
   } else {
     spotifyOutput = <p>Loading...</p>;
