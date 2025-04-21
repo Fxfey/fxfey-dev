@@ -40,7 +40,7 @@ export default function LandingPage() {
             Full Stack Developer
           </h2>
           <p className="w-full text-center md:text-left md:w-[55%] mb-12 text-lg">{`Crafting digital experiences from the UK, I'm a full stack developer with a passion for turning complex problems into elegant solutions.`}</p>
-          <div className="flex justify-center md:justify-start gap-8">
+          <div className="flex flex-wrap justify-center md:justify-start gap-8">
             {landingButtons.map((item) => {
               return (
                 <BtnPrimary
