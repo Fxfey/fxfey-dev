@@ -21,7 +21,7 @@ export default function Blog() {
         </p>
       </div>
       <div className="mt-8 pt-4 border-t border-gray-100">
-        <p className="text-sm italic">
+        <p className="text-sm italic mb-8">
           I{"'"}ll be documenting my progress and learnings here soon. Check
           back for updates!
         </p>
