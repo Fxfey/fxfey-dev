@@ -6,7 +6,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
   return (
-    <PageSkeleton activePage="contact">
+    <PageSkeleton>
       <h1 className="text-3xl md:text-4xl font-bold mb-6">Get in touch!</h1>
       <p className="text-lg mb-3 md:w-1/2">
         I{"'"}d love to hear from you! Whether you have a question, want to

@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-interface NavbarProps {
-  activePage: string;
-}
-
-export default function Navbar({ activePage }: NavbarProps) {
+export default function Navbar() {
   const [hovered, setHovered] = useState('');
   const [showDiv, setShowDiv] = useState(false);
   const [transition, setTransition] = useState(false);

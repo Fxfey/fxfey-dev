@@ -3,7 +3,7 @@ import PageSkeleton from '@/app/_components/core/PageSkeleton';
 
 export default function Blog() {
   return (
-    <PageSkeleton activePage="blog">
+    <PageSkeleton>
       <h1 className="mb-6">Why the coming soon?</h1>
       <div className="md:w-1/2">
         <p className="mb-4">

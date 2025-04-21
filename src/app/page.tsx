@@ -34,7 +34,7 @@ export default function LandingPage() {
             isLoading ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <Navbar activePage="" />
+          <Navbar />
           <h1 className="text-center md:text-left">{`Hi, I'm Ben 'Fxfey'`}</h1>
           <h2 className="text-center md:text-left mb-12">
             Full Stack Developer

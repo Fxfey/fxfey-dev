@@ -10,7 +10,6 @@ interface PageLayoutProps {
 
 export default function PageSkeleton({
   children,
-  activePage = '',
   loadTime = 0,
 }: Readonly<PageLayoutProps>) {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +32,7 @@ export default function PageSkeleton({
             isLoading ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <Navbar activePage={activePage} />
+          <Navbar />
           {/* Page Content */}
           {children}
         </div>

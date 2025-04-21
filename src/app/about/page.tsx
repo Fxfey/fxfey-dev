@@ -104,7 +104,7 @@ export default function About() {
   ];
 
   return (
-    <PageSkeleton activePage="blog">
+    <PageSkeleton>
       <CardSecondary>
         <div>
           <h1>Who am I?</h1>

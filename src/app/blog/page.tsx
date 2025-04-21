@@ -5,7 +5,7 @@ import BtnPrimary from '../_components/buttons/primary';
 
 export default function Blog() {
   return (
-    <PageSkeleton activePage="blog">
+    <PageSkeleton>
       <CardPrimary>
         <h1>Coming Soon</h1>
         <h3 className="mb-4">Want to know why?</h3>
