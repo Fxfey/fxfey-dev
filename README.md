@@ -8,21 +8,21 @@ This isn’t just another portfolio site. When I set out to build it, I challeng
 
 ### ✨ Key Features
 
-- **Next.js Frontend**
-  The site is built using [Next.js](https://nextjs.org/) for fast performance, flexibility, and modern frontend capabilities.
+-   **Next.js Frontend**
+    The site is built using [Next.js](https://nextjs.org/) for fast performance, flexibility, and modern frontend capabilities.
 
-- **Custom Headless CMS (Work in Progress)**
-  Rather than relying on off-the-shelf CMS solutions, I'm building a **bespoke CMS from scratch** using Laravel. This CMS will serve as a headless backend, giving me full control over content, structure, and integrations.
+-   **Custom Headless CMS (Work in Progress)**
+    Rather than relying on off-the-shelf CMS solutions, I'm building a **bespoke CMS from scratch** using Laravel. This CMS will serve as a headless backend, giving me full control over content, structure, and integrations.
 
-- **Steam Web API Integration**
-  Displays real time game statistics by tapping into the [Steam Web API](https://developer.valvesoftware.com/wiki/Steam_Web_API).
+-   **Steam Web API Integration**
+    Displays real time game statistics by tapping into the [Steam Web API](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
-- **Spotify API Integration**
-  Pulls in real-time listening data from [Spotify's Web API](https://developer.spotify.com/documentation/web-api/), making the portfolio more personal and dynamic.
+-   **Spotify API Integration**
+    Pulls in real-time listening data from [Spotify's Web API](https://developer.spotify.com/documentation/web-api/), making the portfolio more personal and dynamic.
 
 ## 🧱 Tech Stack
 
-- **Frontend:** Next.js, React, Tailwind CSS
-- **APIs:** Steam Web API, Spotify Web API
-- **Backend (Planned):** Laravel (as a headless CMS)
-- **Hosting:** Vercel (for frontend)
+-   **Frontend:** Next.js, React, Tailwind CSS
+-   **APIs:** Steam Web API, Spotify Web API
+-   **Backend (Planned):** Wordpress (as a headless CMS)
+-   **Hosting:** Vercel (for frontend)
