@@ -12,7 +12,7 @@ This isn’t just another portfolio site. When I set out to build it, I challeng
     The site is built using [Next.js](https://nextjs.org/) for fast performance, flexibility, and modern frontend capabilities.
 
 -   **Custom Headless CMS (Work in Progress)**
-    Rather than relying on off-the-shelf CMS solutions, I'm building a **bespoke CMS from scratch** using Laravel. This CMS will serve as a headless backend, giving me full control over content, structure, and integrations.
+    Rather than relying on off-the-shelf CMS solutions, I'm building a **bespoke CMS from scratch** using Wordpress. This CMS will serve as a headless backend, giving me full control over content, structure, and integrations.
 
 -   **Steam Web API Integration**
     Displays real time game statistics by tapping into the [Steam Web API](https://developer.valvesoftware.com/wiki/Steam_Web_API).
