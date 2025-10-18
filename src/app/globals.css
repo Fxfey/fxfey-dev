@@ -1,9 +1,26 @@
 @import 'tailwindcss';
 
+/*
+COLOR USAGE GUIDE:
+--foreground: Primary text color
+--accent: Primary action color (buttons, links, highlights)
+--secondary-bg: Cards, sections, elevated surfaces
+--border: Borders, dividers, subtle separators
+--text-muted: Secondary text, captions, placeholders, labels
+--accent-hover: Hover state for accent elements
+*/
+
 :root {
   --background: #f5f3ee;
   --foreground: #2b2b2b;
   --accent: #3b6ee8;
+  --secondary-bg: #ede9e0;
+  --border: #d6d2c8;
+  --text-muted: #6b6b6b;
+  --accent-hover: #2b5fdb;
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
 }
 
 @theme inline {
@@ -22,6 +39,13 @@
     --background: #242424;
     --foreground: #f5f3ee;
     --accent: #d62839;
+    --secondary-bg: #2e2e2e;
+    --border: #3d3d3d;
+    --text-muted: #a8a8a8;
+    --accent-hover: #e63946;
+    --success: #22c55e;
+    --error: #ef4444;
+    --warning: #f59e0b;
   }
 }
 
