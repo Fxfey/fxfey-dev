@@ -1,28 +1,36 @@
-# Portfolio Client
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Welcome to the codebase behind my personal portfolio client - a Next.js project that’s more than just a showcase. It’s an evolving experiment, a space where I push boundaries, explore new stacks, and craft tools that reflect how I work and what I value as a developer.
+## Getting Started
 
-## 🧠 Project Overview
+First, run the development server:
 
-This isn’t just another portfolio site. When I set out to build it, I challenged myself to dive into an entirely new tech stack and build something **truly functional** - not just pretty.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### ✨ Key Features
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
--   **Next.js Frontend**
-    The site is built using [Next.js](https://nextjs.org/) for fast performance, flexibility, and modern frontend capabilities.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
--   **Custom Headless CMS (Work in Progress)**
-    Rather than relying on off-the-shelf CMS solutions, I'm building a **bespoke CMS from scratch** using Wordpress. This CMS will serve as a headless backend, giving me full control over content, structure, and integrations.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
--   **Steam Web API Integration**
-    Displays real time game statistics by tapping into the [Steam Web API](https://developer.valvesoftware.com/wiki/Steam_Web_API).
+## Learn More
 
--   **Spotify API Integration**
-    Pulls in real-time listening data from [Spotify's Web API](https://developer.spotify.com/documentation/web-api/), making the portfolio more personal and dynamic.
+To learn more about Next.js, take a look at the following resources:
 
-## 🧱 Tech Stack
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
--   **Frontend:** Next.js, React, Tailwind CSS
--   **APIs:** Steam Web API, Spotify Web API
--   **Backend (Planned):** Wordpress (as a headless CMS)
--   **Hosting:** Vercel (for frontend)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
