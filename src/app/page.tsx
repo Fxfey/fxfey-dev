@@ -1,9 +1,53 @@
 import Image from 'next/image';
 
+import { Title } from '@/components/Title';
+import { SIZINGS } from '@/constants/sizings';
+
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <div className="w-full">
+          <Title size={SIZINGS.LG}>Welcome to the Title Component</Title>
+          <p className="mt-4 text-text-muted">
+            Examples of different heading sizes
+          </p>
+        </div>
+
+        <div className="w-full space-y-8">
+          <section>
+            <Title size={SIZINGS.MD}>
+              Large Titles (Page Titles & Hero Text)
+            </Title>
+            <div className="mt-4 bg-secondary-bg p-4 rounded border border-border">
+              <Title size={SIZINGS.LG}>This is a large title</Title>
+              <p className="mt-2 text-sm text-text-muted">
+                Use for main page titles and hero sections
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <Title size={SIZINGS.MD}>Medium Titles (Section Headers)</Title>
+            <div className="mt-4 bg-secondary-bg p-4 rounded border border-border">
+              <Title size={SIZINGS.MD}>This is a medium title</Title>
+              <p className="mt-2 text-sm text-text-muted">
+                Use for subsections and feature headers
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <Title size={SIZINGS.MD}>Small Titles (Minor Headers)</Title>
+            <div className="mt-4 bg-secondary-bg p-4 rounded border border-border">
+              <Title size={SIZINGS.SM}>This is a small title</Title>
+              <p className="mt-2 text-sm text-text-muted">
+                Use for list items and labels
+              </p>
+            </div>
+          </section>
+        </div>
+
         <Image
           className="dark:invert"
           src="/next.svg"
