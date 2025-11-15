@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { Text } from '@/components/Text';
 import { Title } from '@/components/Title';
 import { SIZINGS } from '@/constants/sizings';
 
@@ -44,6 +45,50 @@ export default function Home() {
               <p className="mt-2 text-sm text-text-muted">
                 Use for list items and labels
               </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="w-full space-y-8">
+          <Title size={SIZINGS.LG}>Text Component Examples</Title>
+
+          <section>
+            <Title size={SIZINGS.MD}>Large Text (18px)</Title>
+            <div className="mt-4 bg-secondary-bg p-4 rounded border border-border">
+              <Text size={SIZINGS.LG}>
+                This is larger body text, perfect for highlighted paragraphs or
+                introduction text.
+              </Text>
+              <Text size={SIZINGS.LG} color="muted" className="mt-2">
+                This is larger text with muted color for less prominent content.
+              </Text>
+            </div>
+          </section>
+
+          <section>
+            <Title size={SIZINGS.MD}>Standard Body Text (16px)</Title>
+            <div className="mt-4 bg-secondary-bg p-4 rounded border border-border">
+              <Text size={SIZINGS.MD}>
+                This is standard body text, the default size for main paragraph
+                content and general reading.
+              </Text>
+              <Text size={SIZINGS.MD} color="muted" className="mt-2">
+                This is standard text with muted color for secondary
+                information.
+              </Text>
+            </div>
+          </section>
+
+          <section>
+            <Title size={SIZINGS.MD}>Small Text (14px)</Title>
+            <div className="mt-4 bg-secondary-bg p-4 rounded border border-border">
+              <Text size={SIZINGS.SM}>
+                This is small text, perfect for captions, helper text, and
+                metadata.
+              </Text>
+              <Text size={SIZINGS.SM} color="muted" className="mt-2">
+                This is small text with muted color for less important details.
+              </Text>
             </div>
           </section>
         </div>
